@@ -6,6 +6,12 @@ GitHub tells you what a project is. Capability Explorer asks what it could becom
 
 An **AI skill**: instructions your assistant follows, not an app, hosted service, or bundled model. Works with repositories, plugins, agents, MCP servers, models, SDKs, CLIs, and frameworks.
 
+### Video demo
+
+**[▶ Watch the 28-second demo](https://github.com/timporachin/Capability-Explorer/blob/main/B1AA21A6-0F24-4CFF-A9B5-A68285A259E3.mov)**
+
+Animated example with music and on-screen explanations. Proposed integrations are labeled.
+
 ### Before / after
 
 **Normal repository explanation**
@@ -120,7 +126,7 @@ For formal installation and host-specific status, see [INSTALL.md](INSTALL.md).
 - [Agent-S](examples/agent-s.md): desktop automation becomes an integration handoff tester.
 - [Hindsight](examples/hindsight.md): memory becomes a record of why a project rejected an approach.
 - [Superpowers](examples/superpowers.md): development practices help turn vague bug reports into reproducible tests.
-- [28-second demo storyboard](launch/demo-storyboard.md): complete production brief; no rendered video is included.
+- [Watch the finished video demo](https://github.com/timporachin/Capability-Explorer/blob/main/B1AA21A6-0F24-4CFF-A9B5-A68285A259E3.mov) · [Original storyboard](launch/demo-storyboard.md).
 
 ## Principles
 
