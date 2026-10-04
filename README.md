@@ -8,9 +8,9 @@ An **AI skill**: instructions your assistant follows, not an app, hosted service
 
 ### Video demo
 
-**[▶ Watch the 28-second demo](https://github.com/timporachin/Capability-Explorer/blob/main/B1AA21A6-0F24-4CFF-A9B5-A68285A259E3.mov)**
+**[▶ Watch the 28-second demo](https://raw.githubusercontent.com/timporachin/Capability-Explorer/main/launch/assets/Capability-Explorer-Demo.mp4)**
 
-Animated example with music and on-screen explanations. Proposed integrations are labeled.
+Animated example with music and on-screen explanations. Proposed integrations are labeled. This opens the video file directly; if your browser downloads it, open it from Downloads or Files.
 
 ### Before / after
 
@@ -126,7 +126,7 @@ For formal installation and host-specific status, see [INSTALL.md](INSTALL.md).
 - [Agent-S](examples/agent-s.md): desktop automation becomes an integration handoff tester.
 - [Hindsight](examples/hindsight.md): memory becomes a record of why a project rejected an approach.
 - [Superpowers](examples/superpowers.md): development practices help turn vague bug reports into reproducible tests.
-- [Watch the finished video demo](https://github.com/timporachin/Capability-Explorer/blob/main/B1AA21A6-0F24-4CFF-A9B5-A68285A259E3.mov) · [Original storyboard](launch/demo-storyboard.md).
+- [Watch the finished video demo](https://raw.githubusercontent.com/timporachin/Capability-Explorer/main/launch/assets/Capability-Explorer-Demo.mp4) · [Original storyboard](launch/demo-storyboard.md).
 
 ## Principles
 
