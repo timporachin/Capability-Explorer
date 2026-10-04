@@ -10,6 +10,8 @@ An **AI skill**: instructions your assistant follows, not an app, hosted service
 
 https://github.com/user-attachments/assets/a3af4d1d-6ab5-4f80-9323-c04f565d2b81
 
+https://github.com/user-attachments/assets/5830ea9c-4a7b-4648-9a7f-0696715eb71a
+
 Animated example with music and on-screen explanations. Proposed integrations are labeled.
 
 ### Before / after
