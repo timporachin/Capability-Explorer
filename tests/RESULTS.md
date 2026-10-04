@@ -39,3 +39,9 @@ The original scenarios 1–8 remain available. Scenarios 1–5 overlap the group
 NoteBridge samples rather than being rerun verbatim. Original scenarios 6–8 were
 run as independent questions in one additional context. No target repository code was executed.
 No real-world integration or comprehensive reliability claim follows from these runs.
+
+## Discovery and catalog revision — 2026-10-04
+
+See [bounded behavioral runs and catalog checks](discovery-results.md). Earlier
+results above apply to their recorded revision. New catalog helper tests are
+separate from model-behavior and end-to-end cross-chat guarantees.

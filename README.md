@@ -34,7 +34,7 @@ Looping animated example with on-screen explanations. Proposed integrations are 
 
 **New capability × your existing project × your existing workflow = new implementation possibility.**
 
-Capability Explorer identifies what a technology provides, connects it to your project's components or problems, and explains 2–4 useful implementations and what they require. It can suggest what to enhance, complement, or replace, with reasons for the connection.
+Capability Explorer identifies what a technology provides, connects it to your project's components or problems, and explains practical uses plus distinct unexpected combinations and what they require. It can suggest what to enhance, complement, or replace, with reasons for the connection.
 
 ## Project-aware by design
 
@@ -52,6 +52,25 @@ Relevant context may come from:
 If sufficient project context genuinely isn't available, Capability Explorer still explains the technology and can ask for a repository or short project description when project-specific recommendations would materially improve the result.
 
 It should never invent project details that aren't actually available.
+
+### Remembering earlier explorations
+
+The skill supports an opt-in cross-chat catalog in a user-authorized durable
+file store. In ChatGPT Work the default filename is
+`Capability_Explorer_Catalog.json`. Other hosts need an equivalent accessible
+destination. The public package contains the protocol and local helper, never
+a user's private history.
+
+Default recall returns at most **5 relevant records**, verifies at most **3 prior
+tools**, and produces up to **3 unexpected combinations**. Broader exploration
+is offered after the normal answer and requires the user's choice. The expanded
+pass returns at most 15 records. These are scope limits, not a guaranteed
+token/dollar cap. Large catalogs are filtered locally, not dumped into context.
+
+Remembered capabilities are leads to verify; prior proposals remain proposals.
+Opt-in permits compact updates during future inquiries when storage is available.
+It does not create a background service or grant access to every past chat.
+See the [catalog protocol](skills/capability-explorer/references/catalog.md).
 
 ## Three levels of detail
 
@@ -80,6 +99,22 @@ For **"How does this work and how would I integrate it?"**
 Adds architecture, interfaces, APIs/MCP tools, source details, exact dependencies, benchmarks, security, licensing, and implementation design as needed.
 
 Complex technology should not require a complex first explanation.
+
+## Discovery is part of the default answer
+
+A repository URL triggers a practical direct fit and an unexpected-combinations
+section. The skill explores three directions: your existing project (or an
+explicit hypothetical when context is absent), a different domain, and an
+ambitious experiment.
+
+Each combination explains the experience, what each component contributes,
+the new ability, missing integration work, and the evidence behind it.
+A final check rejects renamed versions of ordinary uses. If evidence supports
+fewer strong ideas, the answer must explain the limitation instead of inventing
+capabilities. Explicit Quick View and narrow technical requests retain their scope.
+
+[Discovery regression scenarios](tests/acceptance.md)
+cover infrastructure, databases, media tooling, and thin evidence.
 
 ## Capability meters
 

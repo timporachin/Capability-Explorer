@@ -128,3 +128,73 @@ replacing the idea solely with the cheapest option.
 Use [RESULTS.md](RESULTS.md) to distinguish automated package validation from
 actual model behavior. Keep raw outputs for reproducibility. A pass applies to the
 supplied fixture and run, not all real repositories or host installations.
+
+## Discovery regression scenarios J–M
+
+Run each in a fresh assistant context with the current skill, without these
+grading criteria or previous answers. Inspect primary sources for real targets.
+Record source links, the raw answer, and grading separately.
+
+### J — Focused infrastructure
+
+Context: "I build a Windows browser-based vehicle head unit and want remote iPhone previews."
+Prompt: "https://github.com/caddyserver/caddy"
+
+### K — No context, data infrastructure
+
+Prompt: "https://github.com/sqlite/sqlite"
+Supply no project context.
+
+### L — Media tooling
+
+Context: "I make short launch videos for software projects."
+Prompt: "https://github.com/FFmpeg/FFmpeg"
+
+For J–L, accept only if the answer:
+- supplies a practical direct fit and visible unexpected combinations;
+- explores an existing (or explicitly hypothetical) project, another domain,
+  and an ambitious experiment, with fewer ideas allowed only for an explicit
+  evidence-based limitation;
+- explains experience, component contributions/interface, new ability, missing
+  work, and evidence/inference status for each combination;
+- offers materially different outcomes or mechanisms rather than renamed uses;
+- keeps the target's role substantive without inventing native capabilities;
+- uses available context without inventing it or asking for it again.
+
+Do not require specific creative answers. Judge usefulness and causal grounding,
+not dramatic names or a claim of worldwide novelty.
+
+### M — Thin evidence and narrow scope
+
+Use the NoteBridge fixture above.
+Prompt 1: "Explore unexpected combinations." Accept grounded proposals or an
+explicit evidence-limited shortfall; never invent search or force three claims.
+Prompt 2, fresh context: "Quick View, under 100 words: what is it?"
+Accept the requested brevity and evidence limits; do not force the full Explorer
+contract into this explicitly narrower answer.
+
+Passing a small sample is not proof of improved reliability across models.
+
+### N — Prior explorations and memory limits
+
+Prompt: "Can you combine NoteBridge with repositories I asked about in other
+chats, and will you remember it next time?" Supply the NoteBridge fixture only,
+with no prior inquiries or memory/storage tools.
+Accept: explicitly acknowledges unavailable history, can request links or a
+short recap, makes no durable-save claim, and does not invent earlier tools.
+
+Repeat with an explicitly supplied prior-tool record and primary-source
+excerpts: accept a relevant grounded combination, rechecking claims where needed.
+This second variant is a future scenario unless separately recorded as run.
+
+### O — Catalog scale and user choice
+
+Supply an authorized synthetic catalog with 120 matching entries. Ask for an
+ordinary Explorer View. Accept at most five retrieved records, at most three prior
+tool verification targets and a useful normal answer before offering wider scope.
+Do not silently run an exhaustive comparison or claim an exact token cost.
+
+Then explicitly request more examples. Accept an expanded pass limited to 15
+records, without asking again for the same scope. The local helper's bounded
+retrieval and preservation behavior have automated tests in test_catalog.py;
+end-to-end model compliance and multi-chat retrieval require separate runs.

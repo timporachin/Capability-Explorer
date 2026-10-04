@@ -33,6 +33,39 @@ When relevant project context exists, **do not default to generic examples**. Ma
 
 Ask a project question only when project-specific analysis would materially improve the answer and the necessary context is genuinely unavailable. Even then, provide the useful general analysis first when possible.
 
+## Reuse prior capability explorations
+
+For a cross-chat catalog, follow [references/catalog.md](references/catalog.md).
+When an authorized catalog exists, retrieve only the best 5 matching records by
+default and verify at most 3 prior tools. Deliver the normal answer before offering
+a broader, more costly pass. Never load the whole catalog into context by default.
+Use its opt-in setting to save compact new exploration records during the turn.
+The public package must never contain private catalog records.
+
+
+Before generating combinations, check relevant earlier repository/tool inquiries
+available in the current conversation, host-provided memory, attached project
+records, or connected sources. Retrieve additional history only through available,
+authorized tools when needed. The skill itself has no memory database and cannot
+guarantee recall across chats.
+
+Use a compact record when available: canonical repository URL, inspected date or
+revision, supported capabilities/interfaces with source links, requirements,
+project relevance, inferred ideas, and rejected approaches with reasons. Treat
+remembered capabilities as discovery leads; recheck material claims against current
+primary sources before relying on them. Do not turn a previously proposed
+integration into an existing feature.
+
+Include a prior-tool combination when it passes the discovery contract and adds
+value. Briefly name the prior tool and why the connection matters. Do not force a
+historical match or assume every earlier tool is installed. If history cannot be
+accessed, say so when relevant and continue with current evidence.
+
+Never claim that reading this skill saves history. Use durable storage only when
+a supported destination and user authorization exist; follow that destination's
+access and privacy rules and confirm success before saying a record was saved.
+Keep private project history separate from a public skill repository.
+
 ## Inspect before explaining
 
 1. Identify the target and its type: application, service, library, model, framework, CLI, SDK, skill, plugin, agent, or MCP server.
@@ -77,7 +110,7 @@ Reason from capabilities rather than buzzwords:
 
 **Capability A from the target × existing feature B × existing tool/workflow C → new possibility**
 
-Prefer 2–4 strong ideas with causal explanations over a long generic brainstorm. Combine overlapping sections rather than filling each heading with another idea.
+Follow the discovery contract below. Combine overlapping sections rather than repeating an idea under multiple headings.
 
 ### 5. What would it take?
 Explain dependencies, setup, resources, difficulty, and important constraints.
@@ -87,7 +120,7 @@ Surface meaningful limitations, maturity, trust/security implications, licensing
 
 ## Progressive disclosure
 
-Choose the smallest useful view.
+Honor explicit scope and length requests. Keep explanations concise without dropping the discovery contract in Explorer View. A bare URL always selects Explorer View.
 
 ### Quick View
 For "What is this?" or a short introduction:
@@ -106,7 +139,7 @@ Default for a repository URL or "what could I do with this?":
 - What it gives you
 - How it fits your project
 - Things you could build with it
-- Things you probably haven't considered
+- Unexpected combinations satisfying the discovery contract
 - What it would take
 - Relevant meters
 - Limitations/caveats
@@ -134,26 +167,40 @@ The ⓘ definition explains the dimension, not the current score. Keep **Why thi
 
 Prefer qualitative ratings. Use approximate 1–10 scores only when they help the user compare options. Never imply these are measured benchmarks. Avoid false precision for token, compute, cost, or setup estimates.
 
-## Project-aware idea generation
+## Discovery contract
 
-When project context exists, generate ideas in increasing ambition:
+For every Explorer View, include a practical direct fit and a visible unexpected-combinations section. Do not wait for the user to ask again. For a narrowly scoped technical question or explicit Quick View, honor that scope instead; do not force a full brainstorm.
 
-### Direct fit
-The clearest way the capability could improve or extend something the user already has.
+Explore three distinct directions:
+1. An existing user project or workflow, using only available relevant context.
+2. A different domain or workflow beyond that project.
+3. An ambitious experiment that creates a materially new ability.
 
-### Creative fit
-A less-obvious implementation that combines the capability with an existing feature, tool, or workflow.
+When no project context exists, use an explicitly hypothetical project for direction 1 and continue; do not invent personal context or block on a question. Aim to present three strong, distinct combinations, one per direction. If the evidence supports fewer, present only the defensible ideas and briefly explain the concrete limitation. Do not manufacture novelty to meet a quota.
 
-### Unexpected possibility
-A useful or ambitious idea the user may not have considered. Explain:
-- which verified/reported capability enables it
-- which existing project component it connects to
-- what additional integration would be required
-- whether it is established or inferred
+For each presented combination, make these points explicit in compact prose or a table:
+- **Experience:** a specific thing the user could do or observe.
+- **Mechanism:** the target's supported capability, the companion component's contribution, and how their interfaces connect.
+- **New ability:** what the combination enables beyond the target's ordinary standalone use.
+- **Missing work:** integrations, data, infrastructure, permissions, or validation still needed.
+- **Evidence:** cite the factual enabling capability and label the overall unbuilt system INFERRED POSSIBILITY.
 
-Do not force all three if they add no value.
+Do not use a product name as a substitute for a mechanism. If a named companion's relevant interface has not been inspected, verify it or describe a generic component with explicit requirements. The target need not be uniquely necessary, but its contribution must be substantive.
 
-General cross-tool combinations are secondary. Do not turn every analysis into a giant autonomous-agent architecture. The priority is **the user's project and the possibilities unlocked inside it**.
+### Novelty and grounding check
+
+Before answering, check:
+- Does the ambitious idea simply automate, scale, or package an earlier idea? Merge it unless it enables a genuinely different outcome; seek a different capability intersection instead.
+- Would changing only the app name, domain, or URL turn one idea into another? If yes, merge them and explore a different mechanism or outcome.
+- Is the supposed surprise merely a standard feature in another setting? Keep that as the direct fit, not an unexpected combination.
+- Does the new ability follow causally from identified capabilities? Show the bridge; do not attribute the whole system to one repository.
+- Is the target incidental while all interesting work happens elsewhere? Explain its meaningful contribution or discard the idea.
+- Are ambition, unsupported claims, and implementation effort clearly separated?
+- Is there at least one concrete scenario the user can picture?
+
+For example, hosting a dashboard, a gallery, and a game are ordinarily three uses of serving content, not three discoveries. Treat this as a rejection example, not a prescribed answer for web servers.
+
+If the check fails, revise before responding. Never describe a focused infrastructure tool as creatively exhausted merely because its everyday use is straightforward. Never force every technology into an autonomous-agent system. Prefer useful, defensible discoveries over hype.
 
 ## Requirements
 
