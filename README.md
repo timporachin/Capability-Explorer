@@ -8,6 +8,12 @@ An **AI skill**: instructions your assistant follows, not an app, hosted service
 
 ### Video demo
 
+**From separate repositories to an Autonomous R&D Laboratory**
+
+https://github.com/user-attachments/assets/942cb972-245d-470b-88f1-7f4354b90627
+
+Capability Explorer connected five capabilities into an **INFERRED SYSTEM ARCHITECTURE**. This is a proposed architecture, not a finished integrated product.
+
 https://github.com/user-attachments/assets/a3af4d1d-6ab5-4f80-9323-c04f565d2b81
 
 https://github.com/user-attachments/assets/5830ea9c-4a7b-4648-9a7f-0696715eb71a
