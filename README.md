@@ -6,15 +6,15 @@ GitHub tells you what a project is. Capability Explorer asks what it could becom
 
 An **AI skill**: instructions your assistant follows, not an app, hosted service, or bundled model. Works with repositories, plugins, agents, MCP servers, models, SDKs, CLIs, and frameworks.
 
-### Video demo
+### Animated demo
 
 **From separate repositories to an Autonomous R&D Laboratory**
 
-https://github.com/user-attachments/assets/942cb972-245d-470b-88f1-7f4354b90627
+![Capability Explorer: from separate repositories to an inferred Autonomous R&D Laboratory](launch/assets/Capability-Explorer-Launch.gif)
 
 Capability Explorer connected five capabilities into an **INFERRED SYSTEM ARCHITECTURE**. This is a proposed architecture, not a finished integrated product.
 
-Animated example with music and on-screen explanations. Proposed integrations are labeled.
+Looping animated example with on-screen explanations. Proposed integrations are labeled.
 
 ### Before / after
 
@@ -130,7 +130,7 @@ For formal installation and host-specific status, see [INSTALL.md](INSTALL.md).
 - [Agent-S](examples/agent-s.md): desktop automation becomes an integration handoff tester.
 - [Hindsight](examples/hindsight.md): memory becomes a record of why a project rejected an approach.
 - [Superpowers](examples/superpowers.md): development practices help turn vague bug reports into reproducible tests.
-- [Watch the finished video demo](#video-demo) · [Original storyboard](launch/demo-storyboard.md).
+- [Watch the animated demo](#animated-demo) · [Original storyboard](launch/demo-storyboard.md).
 
 ## Principles
 
