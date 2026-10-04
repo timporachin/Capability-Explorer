@@ -1,44 +1,30 @@
 # Capability Explorer
 
-**Show it a tool. Discover what it can add to what you're already building.**
+**Show it a tool, agent, skill, or GitHub repo. Discover what it can add to what you're already building — including useful possibilities you haven't thought of.**
 
-Capability Explorer is an AI skill for exploring GitHub repositories, plugins, skills, agents, MCP servers, models, SDKs, CLIs, and other developer/AI technologies.
+GitHub tells you what a project is. Capability Explorer asks what it could become inside yours.
 
-It doesn't stop at **"What does this do?"**
+An **AI skill**: instructions your assistant follows, not an app, hosted service, or bundled model. Works with repositories, plugins, agents, MCP servers, models, SDKs, CLIs, and frameworks.
 
-It asks:
+### Before / after
 
-> **How could this capability be used in my projects — and what useful or surprising things could I implement with it that I probably haven't thought of?**
+**Normal repository explanation**
+
+> “This library lets AI agents interact with desktop applications.”
+
+**Capability Explorer**
+
+> “Your project already has automated builds. This could become a visual acceptance-test worker: launch each build, navigate affected screens, and report failures to your coding agent. Because your app also launches third-party programs, it could test the handoff between them — even without an API.”
+
+*Illustrative project context; proposed integrations are **INFERRED POSSIBILITY**, not existing features or completed tests. [Full Agent-S example](examples/agent-s.md).*
+
+**[Try it in two minutes](INSTALL.md)** · **[See examples](examples/README.md)** · **[Read the skill](skills/capability-explorer/SKILL.md)**
 
 ## The idea
 
-When you paste a repository or ask about a technology, Capability Explorer:
+**New capability × your existing project × your existing workflow = new implementation possibility.**
 
-1. **Understands the capability** — what the tool actually provides and what evidence supports it.
-2. **Understands your project context** — using relevant project information already available to your AI assistant.
-3. **Connects the two** — identifying concrete integration opportunities.
-4. **Pushes beyond the obvious** — finding useful capability combinations you may not have considered.
-5. **Explains what it would take** — dependencies, difficulty, tokens/compute when relevant, limitations, security, maturity, and licensing concerns.
-
-The goal is not to summarize README files. The goal is to turn unfamiliar technology into **project-specific possibilities**.
-
-## Example
-
-Imagine you're building a desktop application and paste a repository for a computer-use agent.
-
-A normal repository summary might say:
-
-> "This project lets an AI interact with graphical interfaces."
-
-Capability Explorer should go further:
-
-> **How it fits your project:** Use it as a visual acceptance tester. After your coding agent finishes a feature, the computer-use agent could launch your application, navigate the affected screens, interact with controls, and report behavioral or visual failures.
->
-> **Something you may not have considered:** Because it can operate software without a dedicated API, the same tester could exercise third-party desktop programs your application integrates with — coverage that ordinary unit tests may not provide.
->
-> **What it would take:** A supported model, computer-control environment, acceptance-test instructions, and appropriate safeguards around actions the agent can perform.
-
-That is the difference between **explaining a technology** and **exploring what the technology unlocks for you**.
+Capability Explorer identifies what a technology provides, connects it to your project's components or problems, and explains 2–4 useful implementations and what they require. It can suggest what to enhance, complement, or replace, with reasons for the connection.
 
 ## Project-aware by design
 
@@ -113,48 +99,28 @@ Capability Explorer deliberately explores possibilities, but it keeps evidence a
 
 This lets Capability Explorer be imaginative **without pretending an idea is already a feature**.
 
-## The signature question
+## Try it
 
-After understanding a new technology, Capability Explorer deliberately asks:
-
-> **What becomes possible when this capability intersects with what the user is already building?**
-
-A useful pattern is:
+Attach [SKILL.md](skills/capability-explorer/SKILL.md) to your assistant and say:
 
 ```text
-Capability from new technology
-            ×
-Existing project feature or problem
-            ×
-Existing tool or workflow
-            =
-New implementation possibility
+Follow the attached Capability Explorer instructions.
+Analyze https://github.com/simular-ai/Agent-S for the project we are building.
+Show a direct fit and one useful possibility I probably haven't considered.
+Use only project context you actually have.
 ```
 
-The best output isn't the longest analysis. It's the one that gives the user a connection they wouldn't have made from reading the repository themselves.
+No project context yet? It will still explain the technology. A short project description makes the connections more specific. The host needs repository/web access or supplied source files; the skill does not grant access or memory.
 
-## Try the skill
+For formal installation and host-specific status, see [INSTALL.md](INSTALL.md).
 
-The skill instructions live here:
+## Examples and demo
 
-[skills/capability-explorer/SKILL.md](skills/capability-explorer/SKILL.md)
-
-If your AI assistant supports installing skills, add the `skills/capability-explorer` folder using its supported installation method.
-
-Otherwise, attach or provide the `SKILL.md` instructions to your assistant and then paste a repository or name a technology.
-
-Example:
-
-```text
-Follow the Capability Explorer skill.
-
-https://github.com/owner/project
-
-Explain what this could add to the projects I'm already working on,
-including useful ideas I probably haven't considered.
-```
-
-For accurate repository analysis, the assistant needs access to the repository or its relevant files.
+- [Agent-Reach](examples/agent-reach.md): a beginner-friendly repair notebook that notices gaps in its own instructions.
+- [Agent-S](examples/agent-s.md): desktop automation becomes an integration handoff tester.
+- [Hindsight](examples/hindsight.md): memory becomes a record of why a project rejected an approach.
+- [Superpowers](examples/superpowers.md): development practices help turn vague bug reports into reproducible tests.
+- [28-second demo storyboard](launch/demo-storyboard.md): complete production brief; no rendered video is included.
 
 ## Principles
 
@@ -166,12 +132,17 @@ For accurate repository analysis, the assistant needs access to the repository o
 - **Resources are information.** Don't optimize every idea for minimum tokens or minimum complexity.
 - **Don't overengineer the answer.** A few strong project-specific ideas beat a giant speculative architecture.
 
-## Status
+## Status and contributing
 
-**v0.1 — early public skill specification.**
+**v0.1.0 — early public skill specification, MIT licensed.** Results depend on the host model, available evidence, and project context. Native host installation recipes are documentation-checked, not end-to-end certified.
 
-Capability Explorer is being refined against real repositories and real project contexts before a stable release.
+[Contribute an example, test repository, or correction](CONTRIBUTING.md). [Behavioral acceptance scenarios](tests/acceptance.md) are separate from automated structural checks; see [validation results](tests/RESULTS.md).
 
-Contributions, test cases, and examples are welcome.
+Run the dependency-free checks with Python 3.10+:
 
-[MIT License](LICENSE)
+```sh
+python3 scripts/validate.py
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+[Launch drafts](launch/README.md) · [MIT License](LICENSE)

@@ -9,7 +9,10 @@ def validate(root=ROOT):
     errors = []
     skill = root / 'skills/capability-explorer/SKILL.md'
     required = [skill, root / 'README.md', root / 'LICENSE',
-                root / 'VERSION', root / 'tests/acceptance.md']
+                root / 'VERSION', root / 'tests/acceptance.md',
+                root / 'INSTALL.md', root / 'CONTRIBUTING.md',
+                root / 'examples/README.md', root / 'launch/README.md',
+                root / 'tests/RESULTS.md']
     for path in required:
         if not path.is_file():
             errors.append(f'Missing: {path.relative_to(root)}')
@@ -38,7 +41,8 @@ def validate(root=ROOT):
         for link in re.findall(r'\[[^\]]*\]\(([^)]+)\)', content):
             if re.match(r'[a-z]+://|#', link):
                 continue
-            if not (doc.parent / link.split('#')[0]).exists():
+            target = doc.parent / link.split('#')[0]
+            if not target.exists():
                 errors.append(f'Broken link in {doc.relative_to(root)}: {link}')
     return errors
 
